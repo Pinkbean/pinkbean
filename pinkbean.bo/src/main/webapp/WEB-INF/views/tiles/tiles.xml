@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>			
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">					
+<tiles-definitions>									
+									
+									
+	<definition name="base-definition" template="/WEB-INF/views/tiles/layouts/default-Layout.jsp"><!-- 이 이름가지고 찾을것이다 -->								
+		<put-attribute name="title" value=""/>							
+		<put-attribute name="header" value=""/>					
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/template/menu.jsp"/>							
+		<put-attribute name="body" value=""/>							
+		<put-attribute name="footer" value=""/>		
+	</definition>								
+									
+	<!-- hello.do를 등록함 -->									
+	<definition name="/*" extends="base-definition">														
+		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp"></put-attribute>							
+	</definition>										
+									
+</tiles-definitions>								

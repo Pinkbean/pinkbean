@@ -14,4 +14,10 @@ public class MainController {
 		mv.setViewName("/index");
 		return mv;
 	}
+	
+	@RequestMapping(value="/index")
+	public String main2() {
+		
+		return "index";
+	}
 }
