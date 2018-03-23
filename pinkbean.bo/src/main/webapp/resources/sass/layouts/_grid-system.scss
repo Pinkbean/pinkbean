@@ -1,0 +1,73 @@
+
+/* GRID CODE */
+
+$padding    : 0.5;
+$margin     : 0.5;
+$num_cols   : 12;
+// $min_width  : 1200px;
+$max_width  : 100%;
+$breakpoint : 30em;
+
+.row {
+	// min-width: $min_width;
+	max-width: $max_width;
+	margin: 0 auto;
+}
+.row:after {
+	content:'';
+	display:block;
+	height:0;
+	clear:both;
+}
+
+[class^=box-] {
+	@include box-sizing;
+	float:left;
+	height: 100%;
+	.data-table &, fieldset &{
+		padding: 0 2px;
+	}
+}
+@media (min-width:$breakpoint) {
+	@for $i from 1 through $num_cols {
+		.box-#{$i} {
+			// margin: 0 percentage($margin)/100;
+			padding: 0 percentage($padding)/100;
+			width: percentage((100*$i)/$num_cols)/100;
+			// width: percentage(((100*$i)/$num_cols)-(($padding*2)+($margin*2)))/100;
+		}
+		.box-space-#{$i} {
+			margin-left: percentage((100*$i)/$num_cols)/100;
+		}
+	}
+}
+
+th, td {
+	.row {
+		padding: .1em 0;
+	}
+}
+
+.row {
+	//background: orange;
+	padding: .5em 0;
+	@include box-sizing;
+}
+
+@for $i from 1 through $num_cols {
+	.box-#{$i} {
+		// background: rgba(green,0.2);
+		//min-height:2.5em;
+		min-height: auto;
+	}
+}
+
+.pull-right, .pull-left {
+	@include cf;
+}
+.pull-right {
+	float: right !important;
+}
+.pull-left {
+	float: left !important;
+}

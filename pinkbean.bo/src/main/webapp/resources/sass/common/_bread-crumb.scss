@@ -1,0 +1,57 @@
+/* 로케이션 */
+
+$breadH: 46px;
+.bread-crumb {
+	a {
+		text-decoration: none;
+	}
+	a, strong, .path {
+		display: inline-block;
+		height: $breadH;
+		line-height: $breadH;
+		vertical-align: top;
+	}
+	.path {
+		position: relative;
+		// padding: 0 5px;
+		color: #767676;
+		font-size: 13px;
+		@include size(24px, 46px);
+		&:after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			@include size(100%);
+			background: image-url('icon/ico-bread-path.png') 0 0 no-repeat;
+		}
+	}
+	a, strong {
+		padding: 0 20px;
+		font-weight: normal;
+		font-size: 16px;
+	}
+	a {
+		color: #666;
+	}
+	.home {
+		padding: 0 5px;
+		position: relative;
+		display: inline-block;
+		@include size($breadH);
+		border-left: 1px #e2e2e2 solid;
+		border-right: 1px #e2e2e2 solid;
+		background-color: #eee;
+		&:after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			@include size(100%);
+			background: #fff image-url('icon/ico-location-home.png') center center no-repeat;
+		}
+		+ .path {
+			@include blind;
+		}
+	}
+}

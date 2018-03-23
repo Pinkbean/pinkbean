@@ -1,0 +1,29 @@
+//////////////////////////////
+// hack
+// dummy
+// 기타등등 제거해도 무방한 파일들
+//////////////////////////////
+
+
+#__bs_notify__ {
+	// left: 0 !important;
+	// right: auto !important;
+	padding: 4px 8px !important;
+	font-size: 11px !important;
+	// border-bottom-right-radius: 5px !important;
+	background-color: rgba(27, 32, 50, 0.4) !important;
+}
+
+.header-primary .logo {
+	// position: absolute;
+	// top: 0;
+	// left: 50%;
+	// margin-left: -110px;
+	@include mq($mobile) {
+		// margin-left: -56.5px;
+	}
+}
+
+.header-primary .header-search-area {
+	// display: none !important;
+}

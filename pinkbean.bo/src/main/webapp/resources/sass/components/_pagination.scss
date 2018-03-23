@@ -1,0 +1,71 @@
+/* pagination medium */
+$page-sizeW: 30px;
+$page-sizeH: 30px;
+.pagination-ui-guide {
+	&.left {
+		text-align: left;
+	}
+	&.center {
+		text-align: center;
+	}
+	&.right {
+		text-align: right;
+	}
+}
+.pagination{
+	position: relative;
+	padding-top: 20px;
+	text-align: center;
+	> a, > strong {
+		display: inline-block;
+		width: $page-sizeW - 2px;
+		height: $page-sizeH - 2px;
+		line-height: $page-sizeH - 2px;
+		font-size: 15px;
+		vertical-align: top;
+		border: 1px solid rgba($base-font-color, 0.1);
+	}
+	> a {
+		color: $base-font-color;
+		text-align: center;
+		text-decoration: none;
+		background-color: #fff;
+	}
+	>strong {
+		text-align: center;
+		color: #fff;
+		font-weight: normal;
+		// border-color: rgba($base-font-color, 0.9);
+		background-color: rgba($base-font-color, 0.9);
+		span {
+			display: inline-block;
+			border-color: rgba($base-font-color, 0.9);
+		}
+	}
+	.btn {
+		color: #222;
+		background-color: transparent;
+		&.prev, &.next, &.first, &.last {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			border-radius: 0;
+			width: $page-sizeW;
+			height: $page-sizeH;
+			line-height: $page-sizeH - 2px;
+			text-decoration: none;
+			vertical-align: top;
+			border: 1px solid rgba($base-font-color, 0.1);
+			color: $base-font-color;
+		}
+	}
+	&.left {
+		text-align: left;
+	}
+	&.center {
+		text-align: center;
+	}
+	&.right {
+		text-align: right;
+	}
+}

@@ -1,0 +1,95 @@
+//////////////////////////////
+// project config
+//////////////////////////////
+
+// Base font
+	$base-font-size  : 14px;
+	$base-font-size-m  : 12px;
+	// $line-height     : (($base-font-size * 1.5) / $base-font-size );
+	// $line-height     : (22.2px / $base-font-size );
+	$line-height     : 1.5;
+	$letter-spacing  : ps-ls(150);
+	$body-font-family  : 'Noto Sans', '돋움', Dotum, Helvetica, Arial, sans-serif;
+	$body-font-color : #000;
+
+
+
+// 경로
+	// 이미지 경로
+	$img : '/resources/img/';
+
+
+// 구형 익스플로러(ie8-) 브라우져 고려 여부
+	// 1. clearfix 에서 *zoom:1 을 사용할지 여부
+	// 2. font-size에서 rem단위 대체용 px 커버 여부
+	// 3. filter: alpha() 사용
+	$old-ie : false;
+
+
+// 컬러
+	// 배경 색상
+	$bg-color: transparent !default;
+
+	// 컬러 팔렛트
+	$c1 : #e60012 !default;
+	$c2 : #5479ab !default;
+	$c3 : #d6bf41 !default;
+	$c4 : #9faf53 !default;
+	$c5 : #b762a2 !default;
+	$bdc1 : #e1e1e1 !default;
+	$bdc2 : #1e75d6 !default;
+
+	// 타이포 색상
+	// $em-color-disable    : #cccccc !default;
+	// $em-color-slightly   : #999999 !default;
+	// $em-color-normal     : $body-font-color !default;
+	// $em-color-weighty    : #5479ab !default;
+	// $em-color-weightiest : #d6bf41 !default;
+	// $em-color-warning    : $c1     !default;
+	// $em-color-fc1        : #9faf53 !default;
+	// $em-color-fc2        : #b762a2 !default;
+
+
+// base color
+	$base-font-color: #355371;
+	$base-line-color: #d7dde4;
+	$base-point-color: #ffcc45;
+
+// point color
+	$color-default: #222;
+	$color-disable: #999;
+	$color-danger: 	#e4423b;
+	$color-warning: #ffa01a;
+	$color-success: #16bd57;
+	$color-info: 	#31b9e2;
+	$color-black: 	#000;
+
+
+// 크기
+	$container-width : 1272px;
+	$cw : $container-width; // container-width
+
+
+// left top size
+	$header-height: 60px;
+	$sidebar-width: 250px;
+	$footer-height: 50px;
+
+
+
+// breakpoint
+	$bp1: 0px;
+	$bp2: 640px;
+	$bp3: 1024px;
+	$bp4: 1600px;
+	$bp1-2: ($bp1 + 1px) $bp2;
+	$bp1-3: ($bp1 + 1px) $bp3;
+	$bp1-4: ($bp1 + 1px) $bp4;
+	$bp2-3: ($bp2 + 1px) $bp3;
+	$bp2-4: ($bp2 + 1px) $bp4;
+	$bp3-4: ($bp3 + 1px) $bp4;
+	$mobile: $bp1-3;
+	$phone: $bp1-2;
+	$tablet: $bp2-3;
+	$pc: ($bp3 + 1px);
+	$wide: $bp4;

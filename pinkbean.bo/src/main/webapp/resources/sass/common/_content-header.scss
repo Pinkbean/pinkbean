@@ -1,0 +1,246 @@
+/* 상단 공통 */
+
+.content-header {
+	border-bottom: 1px #e2e2e2 solid;
+	.wrapper {
+		margin: 0 auto;
+		// padding: 10px 0;
+		padding: 0;
+		width: 1200px;
+		@include cf;
+	}
+	.bread-crumb {
+		float: left;
+	}
+	.content-util {
+		position: relative;
+		padding: 10px 0;
+		float: right;
+		.block {
+			float: left;
+			+ .block {
+				margin-left: 10px;
+				padding-left: 10px;
+				border-left: 1px #e2e2e2 solid;
+			}
+			> .btn {
+				position: relative;
+				display: inline-block;
+				@include size(26px);
+				overflow: hidden;
+				background-color: #e2e2e2;
+				@include ir;
+				vertical-align: top;
+				&:after {
+					position: absolute;
+					content: '';
+					top: 0;
+					left: 0;
+					@include size(100%);
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+			}
+			.print-btn:after {background-image: image-url('icon/ico-print.png'); background-color: #f87534;}
+			.share-btn:after {background-image: image-url('icon/ico-link.png'); background-color: #8eb83d;}
+			.facebook-btn:after {background-image: image-url('icon/ico-facebook-sm.png'); background-color: #446bcd;}
+			.twitter-btn:after {background-image: image-url('icon/ico-twitter-sm.png'); background-color: #4ab2f4;}
+			.font-larger:after {background-image: image-url('icon/ico-font-plus.png');}
+			.font-smaller:after {background-image: image-url('icon/ico-font-minus.png');}
+			.font-btn {
+				&:after {
+					background-color: #767676;
+				}
+			}
+		}
+		@include mq($mobile) {
+			.block {
+				@include cf;
+				+ .block {
+					margin-left: 0;
+					padding-left: 0;
+					border-left: none;
+				}
+				>.btn {
+					display: block;
+					float: left;
+				}
+				.print-btn, .font-larger, .font-smaller {
+					display: none;
+				}
+				.share-btn, .facebook-btn, .twitter-btn {
+					&:after {
+						background-size: 26px auto;
+					}
+				}
+				.share-btn:after {background-image: image-url('icon/ico-link-m.png');}
+				.facebook-btn:after {background-image: image-url('icon/ico-facebook-sm-m.png');}
+				.twitter-btn:after {background-image: image-url('icon/ico-twitter-sm-m.png');}
+			}
+		}
+	}
+	.mobile-lnb {
+		position:relative;
+		padding:5px 30px;
+		border-bottom: 1px #e2e2e2 solid;
+		// .mb-lnb-list-wrap{
+		// 	.mb-lnb-ul-box{
+		// 		display:block;
+		// 		.owl-stage-outer{
+		// 			.owl-stage{
+		// 				@include cf;
+		// 				.owl-item{
+		// 					float:left;
+		// 						a{
+		// 							text-decoration:none;
+		// 							font-size:mrem(14px);
+		// 							color:#a4a4a4;
+		// 							span{
+		// 								//
+		// 							}
+		// 						}
+		// 					}
+		// 				}
+		// 			}
+		// 		}
+		// 		.owl-nav{
+		// 			display:none;
+		// 			.owl-prev, .owl-next{
+		// 				position:absolute;
+		// 				top:0;
+		// 			}
+		// 			.owl-prev{
+		// 				left:0;
+		// 			}
+		// 			.owl-next{
+		// 				right:0;
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		.mb-lnb-list-wrap{
+			position:relative;
+			overflow:hidden;
+			z-index:1;
+			// padding:10px;
+			// @include cf;
+			.mb-lnb-ul-box{
+				@include box-sizing;
+				float: left;
+				display: block;
+				font-size: 0;
+				white-space: nowrap;
+				position: relative;
+				// width:100%;
+				// z-index:1;
+				// margin:0 -6px;
+				.mb-lnb-li{
+					display: inline-block;
+					padding:0 6px;
+					a{
+						text-decoration:none;
+						font-size:mrem(14px);
+						color:#a4a4a4;
+
+						display:block;
+						// width:100px;
+						span{
+							//
+						}
+					}
+					&.on{
+						a{
+							color:red;
+						}
+					}
+				}
+			}
+		}
+
+		.btn_area{
+			.m-top-btn_prev, .m-top-btn_next{
+				position:absolute;
+				top:0;
+				z-index:2;
+				width:30px;
+				height:100%;
+				// background-color:#fff;
+				border:0;
+			}
+			.m-top-btn_prev{
+				border-right:1px solid #eaeaea;
+				left:0;
+				background:#fff image-url('common/two-depth-arrow-left.png') center center no-repeat;
+				background-size:10px auto;
+			}
+			.m-top-btn_next{
+				border-left:1px solid #eaeaea;
+				right:0;
+				background:#fff image-url('common/two-depth-arrow-right.png') center center no-repeat;
+				background-size:10px auto;
+			}
+		}
+	}
+}
+
+.ballon-popup {
+	display: none;
+	position: relative;
+	h3 {
+		height: 36px;
+		line-height: 36px;
+		color: #fff;
+		font-size: 16px;
+		text-align: center;
+		background-color: $c1;
+	}
+	.ballon-close {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		@include size(26px);
+		overflow: hidden;
+		@include ir;
+		&:after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			@include size(100%);
+			background: $c1 image-url('icon/ico-ballon-close.png') center center no-repeat;
+		}
+	}
+	&.url-share-popup {
+		position: absolute;
+		top: 42px;
+		right: 20px;
+		width: 400px;
+		z-index: 10;
+		background-color: #fff;
+		box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+		.url-box {
+			padding: 16px 0;
+			text-align: center;
+			background-color: #f5f5f5;
+			input {
+				padding: 7px 10px;
+				width: 310px;
+				height: 38px;
+				text-align: left;
+				vertical-align: top;
+				font-size: 14px;
+			}
+			.btn {
+				vertical-align: top;
+				font-size: 14px;
+			}
+		}
+		.comment {
+			padding: 14px 5px;
+			font-size: 12px;
+			color: #767676;
+			text-align: center;
+		}
+	}
+}

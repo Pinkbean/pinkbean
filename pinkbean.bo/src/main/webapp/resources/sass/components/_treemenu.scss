@@ -1,0 +1,60 @@
+
+.tree-menu li,
+.tree-menu li > a,
+.tree-menu li > span {
+	padding: 5px;
+}
+
+.tree-menu {
+	background-color: #f1f1f1;
+	.treemenu {
+		padding-left: 30px;
+	}
+	.toggler {
+		cursor: pointer;
+		text-align: center;
+		&:before {
+			display: inline-block;
+			@include size(20px);
+			line-height: 20px;
+			vertical-align: middle;
+			background-color: #999;
+			color: #FFF;
+		}
+	}
+	li {
+		&.tree-empty {
+			> .toggler {
+				opacity: 0.3;
+				cursor: default;
+				&:before {
+					content: "";
+				}
+			}
+		}
+		&.tree-closed {
+			> .toggler {
+				&:before {
+					content: "+";
+				}
+			}
+		}
+		&.tree-opened {
+			> .toggler {
+				&:before {
+					content: "\2212";
+					text-indent: -2px
+				}
+			}
+		}
+		a {
+			color:$base-font-color;
+			text-decoration: none;
+			&.active {
+				background-color: $base-font-color;
+				border-radius: 5px;
+				color: #fff;
+			}
+		}
+	}
+}

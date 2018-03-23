@@ -1,0 +1,167 @@
+.card-header {
+	position: relative;
+	> h3 {
+		word-break: break-all;
+	}
+}
+.card-body {
+	line-height: 1.7;
+}
+.line-card { // 기본형태의 카드
+	@include box-sizing;
+	height: 100%;
+	padding: 15px;
+	box-shadow: 1px 1px 5px rgba(126, 142, 159, 0.1);
+	background-color: #fff;
+	&.no-line {
+		.card-header {
+			border: 0;
+		}
+	}
+	&.mark,
+	&.mark-danger,
+	&.mark-warning,
+	&.mark-success,
+	&.mark-info,
+	&.mark-black {
+		border: 0;
+		.card-header {
+			> h3 {
+				display: inline-block;
+				position: relative;
+				padding-right: 10px;
+				//display: inline-block;
+				&:after {
+					position: absolute;
+					content: '';
+					width: 100%;
+					height: 3px;
+					left: -10px;
+					bottom: -15px;
+					padding-right: 13px;
+					background-color: $base-font-color;
+				}
+			}
+			.total-number {
+				position: absolute;
+				top: 50%;
+				right: 14px;
+				margin-top: -10px;
+				font-size: 13px;
+				font-weight: normal;
+			}
+		}
+	}
+	&.mark-danger > .card-header {
+		> h3:after {
+			background-color: $color-danger;
+		}
+	}
+	&.mark-warning > .card-header {
+		> h3:after {
+			background-color: $color-warning;
+		}
+	}
+	&.mark-success > .card-header {
+		> h3:after {
+			background-color: $color-success;
+		}
+	}
+	&.mark-info > .card-header {
+		> h3:after {
+			background-color: $color-info;
+		}
+	}
+	&.mark-black > .card-header {
+		> h3:after {
+			background-color: $color-black;
+		}
+	}
+	.card-header {
+		@include box-sizing;
+		padding: 2px 10px 13px;
+		border-bottom: 1px solid $base-line-color;
+	}
+	.card-body {
+		@include box-sizing;
+		padding: 15px 0;
+	}
+}
+
+.block-card {
+	height: 100%;
+	box-shadow: 1px 1px 5px rgba(126, 142, 159, 0.1);
+	background-color: #fff;
+	&.no-line {
+		.card-header {
+			border-bottom: 0;
+		}
+	}
+	&.mark,
+	&.mark-danger,
+	&.mark-warning,
+	&.mark-success,
+	&.mark-info,
+	&.mark-black {
+		.card-header {
+			color: #fff;
+			border: 0;
+		}
+	}
+	&.mark > .card-header {
+		background-color: rgba($base-font-color, 0.9);
+	}
+	&.mark-danger > .card-header {
+		background-color: rgba($color-danger, 0.9);
+	}
+	&.mark-warning > .card-header {
+		background-color: rgba($color-warning, 0.9);
+	}
+	&.mark-success > .card-header {
+		background-color: rgba($color-success, 0.9);
+	}
+	&.mark-info > .card-header {
+		background-color: rgba($color-info, 0.9);
+	}
+	&.mark-black > .card-header {
+		background-color: rgba($color-black, 0.8);
+	}
+	.card-header, .card-body {
+		@include box-sizing;
+	}
+	.card-header {
+		position: relative;
+		padding: 15px 25px;
+		border-bottom: 1px solid $base-line-color;
+		.total-number {
+			position: absolute;
+			top: 50%;
+			margin-top: -8px;
+			right: 30px;
+			font-size: 13px;
+			font-weight: normal;
+			//color: $base-font-color;
+		}
+	}
+	.card-body {
+		padding: 15px;
+	}
+}
+
+.line-card, .block-card {
+	&.outline {
+		border: 1px #ddd solid;
+		@include border-radius(25px);
+		overflow: hidden;
+	}
+}
+
+.overlap-card {
+	width: 100%;
+	height: 100%;
+	@include border-radius(5px);
+	@include box-sizing;
+	padding: 20px;
+	border: 1px solid #d7dde4;
+	box-shadow: 2px 2px 6px rgba(126, 142, 159, 0.1);
+}

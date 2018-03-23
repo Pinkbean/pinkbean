@@ -1,0 +1,97 @@
+$tab-small-padding: 3px 10px;
+$tab-medium-padding: 8px 10px;
+$tab-large-padding: 12px 10px;
+$tab-length: 4;
+
+.tab-ui-guide {
+	i {
+		margin: 0 0 15px 0;
+	}
+}
+.tab {
+	@include cf;
+	li {
+		float: left;
+		margin: 1px;
+		padding: $tab-medium-padding;
+		transition: 0.2s;
+		vertical-align: middle;
+		background-color: rgba(#9fa4a9, 0.9);
+		@include box-sizing();
+		&.on,&:hover {
+			background-color: #293c4e;
+		}
+		a {
+			display: block;
+			text-align: center;
+			color: #fff;
+			min-width: 120px;
+			@include multi-ellipsis(2,1.4);
+		}
+	}
+	&.small {
+		li {
+			padding: $tab-small-padding;
+			a {
+				min-width: 90px;
+			}
+		}
+	}
+	&.medium {
+		li {
+			padding: $tab-medium-padding;
+			a {
+				min-width: 120px;
+			}
+		}
+	}
+	&.large {
+		display: table;
+		width: 100%;
+		li {
+			display: table-cell;
+			float: none;
+			margin: 0;
+			vertical-align: middle;
+			border-left: 1px solid #fff;
+			padding: $tab-large-padding;
+			&:first-child {
+				border-left: 0;
+			}
+			a {
+				font-size: rem(16px);
+			}
+		}
+	}
+	&.border {
+		li {
+			border-bottom: 1px solid $base-font-color;
+			border-top: 1px solid transparent;
+			border-left: 0;
+			background: none;
+			&.on {
+				border-top: 2px solid $base-font-color;
+				border-left: 2px solid $base-font-color;
+				border-right: 2px solid $base-font-color;
+				border-bottom-color: transparent;
+			}
+			a {
+				color: $base-font-color;
+			}
+		}
+	}
+	&.center {
+		display: table;
+		margin: 0 auto;
+	}
+}
+.tab-content-wrap {
+	//max-width: 448px;
+	.tab-contents {
+		min-height: 150px;
+		padding: 10px;
+		> div {
+			font-size: 15px;
+		}
+	}
+}

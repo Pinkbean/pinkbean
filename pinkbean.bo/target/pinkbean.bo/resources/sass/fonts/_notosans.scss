@@ -1,0 +1,98 @@
+/*
+ * NotoSans CJK (subset) https://www.google.com/get/noto/#sans-kore
+ */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 250;
+  src: url(../font/notosans/NotoSans-Thin.eot);
+  src: url(../font/notosans/NotoSans-Thin.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Thin.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Thin.woff) format('woff'),
+       url(../font/notosans/NotoSans-Thin.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../font/notosans/NotoSans-Light.eot);
+  src: url(../font/notosans/NotoSans-Light.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Light.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Light.woff) format('woff'),
+       url(../font/notosans/NotoSans-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 350;
+  src: url(../font/notosans/NotoSans-DemiLight.eot);
+  src: url(../font/notosans/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-DemiLight.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-DemiLight.woff) format('woff'),
+       url(../font/notosans/NotoSans-DemiLight.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/notosans/NotoSans-Regular.eot);
+  src: url(../font/notosans/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Regular.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Regular.woff) format('woff'),
+       url(../font/notosans/NotoSans-Regular.ttf) format('truetype');
+  // src: url(../font/notosans/NotoSans-DemiLight.eot);
+  // src: url(../font/notosans/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+  //      url(../font/notosans/NotoSans-DemiLight.woff2) format('woff2'),
+  //      url(../font/notosans/NotoSans-DemiLight.woff) format('woff'),
+  //      url(../font/notosans/NotoSans-DemiLight.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../font/notosans/NotoSans-Medium.eot);
+  src: url(../font/notosans/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Medium.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Medium.woff) format('woff'),
+       url(../font/notosans/NotoSans-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../font/notosans/NotoSans-Medium.eot);
+  src: url(../font/notosans/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Medium.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Medium.woff) format('woff'),
+       url(../font/notosans/NotoSans-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/notosans/NotoSans-Medium.eot);
+  src: url(../font/notosans/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Medium.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Medium.woff) format('woff'),
+       url(../font/notosans/NotoSans-Medium.ttf) format('truetype');
+}
+// @font-face {
+//   font-family: 'Noto Sans';
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url(../font/notosans/NotoSans-Bold.eot);
+//   src: url(../font/notosans/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+//        url(../font/notosans/NotoSans-Bold.woff2) format('woff2'),
+//        url(../font/notosans/NotoSans-Bold.woff) format('woff'),
+//        url(../font/notosans/NotoSans-Bold.ttf) format('truetype');
+// }
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../font/notosans/NotoSans-Black.eot);
+  src: url(../font/notosans/NotoSans-Black.eot?#iefix) format('embedded-opentype'),
+       url(../font/notosans/NotoSans-Black.woff2) format('woff2'),
+       url(../font/notosans/NotoSans-Black.woff) format('woff'),
+       url(../font/notosans/NotoSans-Black.ttf) format('truetype');
+}

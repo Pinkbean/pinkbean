@@ -1,0 +1,41 @@
+/* head font */
+h1 {font-size: 2.3em;}
+h2 {font-size: 1.85em;}
+h3 {font-size: 1.45em;}
+h4 {font-size: 1.2em;}
+h5 {font-size: 1em;}
+h6 {font-size: 0.85em;}
+
+
+/* font-color */
+// base color
+.font 				{color: $base-font-color; font-style: normal;}
+.font.opacity40		{opacity: 0.4;}
+.font.opacity60		{opacity: 0.6;}
+.font.opacity80		{opacity: 0.8;}
+
+// danger color
+.font.danger	{color: $color-danger;}
+
+// warning color
+.font.warning	{color: $color-warning;}
+
+// success color
+.font.success	{color: $color-success;}
+
+// info color
+.font.info		{color: $color-info;}
+
+// black color
+.font.default		{color: $color-default;}
+
+/* font-style */
+.font.bold		{font-weight: bold;}
+.font.italic	{font-style: italic;}
+.font.underline	{text-decoration: underline;}
+.font.cancel	{text-decoration: line-through;}
+
+/* font-align */
+.left {text-align: left !important}
+.right {text-align: right !important}
+.center {text-align: center !important}

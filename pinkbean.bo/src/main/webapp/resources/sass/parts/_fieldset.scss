@@ -1,0 +1,99 @@
+.fieldset {
+	legend {
+		border: 0 !important;
+		clip: rect(0 0 0 0) !important;
+		height: 1px !important;
+		margin: -1px !important;
+		overflow: hidden !important;
+		padding: 0 !important;
+		position: absolute !important;
+		width: 1px !important;
+	}
+	.field {
+		padding: 10px 15px;
+		@include cf;
+		border-bottom: 1px solid $base-line-color;
+		> .label {
+			float: left;
+			width: 104px;
+			padding-top: 2px;
+			text-align: right;
+			margin-right: 20px;
+			font-size: 13px;
+		}
+		.insert {
+			float: none;
+			overflow: hidden;
+			p {
+				font-size: 13px;
+			}
+		}
+		.txt-ip {
+			width: 100%;
+		}
+		&.email {
+			.insert {
+				@include cf;
+				.email-group {
+					display: block;
+					float: left;
+					width: 60%;
+					&.at {
+						width: 3%;
+						text-align: center;
+						vertical-align: middle;
+					}
+					&.sel-box {
+						width: 37%;
+					}
+					.email-ip {
+						width: 100%;
+					}
+				}
+			}
+		}
+		&.check_field {
+			>.label {
+				padding-top: 4px;
+			}
+		}
+	}
+	input[type="text"],input[type="password"],input[type="number"],select {
+		height: 26px;
+		font-size: 13px;
+	}
+}
+.input-btn-group {
+	@include cf;
+	.input-wrap {
+		float: left;
+		width: 75%;
+		input {
+			vertical-align: top;
+		}
+	}
+	.btn {
+		float: left;
+		width: 25%;
+		margin: 0;
+	}
+}
+.date-picker {
+	display: inline-block;
+	position: relative;
+	input {
+		width: 200px;
+		padding: 0 20px 0 10px;
+		background: #FFF !important;
+	}
+	&:before {
+		display: inline-block;
+		content: "";
+		@include size(20px);
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-top: -10px;
+		background:image-url('icon/datepicker.png') no-repeat;
+	}
+}

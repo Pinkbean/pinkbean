@@ -1,0 +1,368 @@
+/*
+Uniform Theme: Uniform Default
+Version: 1.8
+By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin: http://uniformjs.com/
+*/
+
+// General settings
+
+@charset "utf-8";
+
+// @import "compass";
+@import "../../../node_modules/susy/sass/susy";
+
+@import "../config";
+// @import "../_variables.scss";
+@import "../utils/functions/function.scss";
+@import "../utils/mixins/_mediaquery.scss";
+
+$selectH: 26px;
+$selectH-m: 26px;
+$checkerW: 22px;
+$checkerH: 22px;
+$radioW: 20px;
+$radioH: 20px;
+$uploadH: 35px;
+
+%basic {
+	background-image: image-url("uniform.png");
+	background-repeat: no-repeat;
+	// background-size: 300px auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+div {
+	// &.uploader {
+	// 	@extend %basic;
+	// 	span.action {
+	// 		@extend %basic;
+	// 	}
+	// }
+	// &.button {
+	// 	@extend %basic;
+	// 	span {
+	// 		@extend %basic;
+	// 	}
+	// }
+	// &.selector, &.checker, &.button, &.radio, &.uploader {
+	&.checker, &.radio {
+		display: -moz-inline-box;
+		display: inline-block;
+		*display: inline;
+		zoom: 1;
+		vertical-align: middle;
+		/* Keeping this as :focus to remove browser styles */
+	}
+	// &.selector:focus, &.checker:focus, &.button:focus, &.radio:focus, &.uploader:focus {
+	&.checker:focus, &.radio:focus {
+		outline: 0;
+	}
+	// &.selector, &.radio, &.checker, &.uploader, &.button {
+	&.radio, &.uploader {
+		margin: 0;
+		padding: 0;
+		* {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	// &.checker input {
+	// 	-moz-appearance: none;
+	// 	-webkit-appearance: none;
+	// }
+	&.selector {
+		// @extend %basic;
+		background-position: 0 (-$selectH - 40px);
+		line-height: $selectH;
+		height: $selectH;
+		padding: 0 0 0 10px;
+		position: relative;
+		overflow: hidden;
+		vertical-align: top;
+		border: 1px #d2d2d2 solid;
+		background: #fff image-url('common/ico-select.png') 100% center no-repeat;
+		&.focus {
+			outline: 5px auto rgb(94, 158, 214);
+		}
+		span {
+			// @extend %basic;
+			text-overflow: ellipsis;
+			display: block;
+			overflow: hidden;
+			white-space: nowrap;
+			// background-position: right 0 - 40px;
+			height: $selectH;
+			line-height: $selectH;
+			// padding-left: 15px;
+			padding-right: 28px;
+			cursor: pointer;
+			width: auto !important;
+			font-size: 14px;
+		}
+		select {
+			opacity: 0;
+			filter: alpha(opacity = 0);
+			-moz-opacity: 0;
+			border: none;
+			background: none;
+			position: absolute;
+			height: $selectH;
+			top: 0px;
+			left: 0px;
+			width: 100% !important;
+		}
+	}
+	&.checker {
+		position: relative;
+		width: $checkerW;
+		height: $checkerH;
+		line-height: $checkerH;
+		&.focus {
+			outline: 5px auto rgb(94, 158, 214);
+		}
+		span, input {
+			width: $checkerW;
+			height: $checkerH;
+			line-height: $checkerH;
+			vertical-align: top;
+		}
+		span {
+			@extend %basic;
+			display: -moz-inline-box;
+			// display: inline-block;
+			// *display: inline;
+			display: block;
+			zoom: 1;
+			text-align: center;
+			// background: #fff image-url("common/ico_checkbox_mark.png") 0 0 no-repeat;
+			// -webkit-background-size: $checkerH $checkerH;
+			// background-size: $checkerH $checkerH;
+			background-position: 0 0;
+			&.checked {
+				// background: #fff image-url("common/ico_checkbox_mark_on.png") 0 0 no-repeat;
+				// -webkit-background-size: $checkerH $checkerH;
+				// background-size: $checkerH $checkerH;
+				background-position: -$checkerW 0;
+			}
+		}
+		input {
+			// display: -moz-inline-box;
+			// display: inline-block;
+			// *display: inline;
+			display: block;
+			opacity: 0;
+			filter: alpha(opacity = 0);
+			-moz-opacity: 0;
+			border: none;
+			background: none;
+			zoom: 1;
+		}
+	}
+	&.radio {
+		position: relative;
+		width: $radioW;
+		height: $radioH;
+		line-height: $radioH;
+		&.focus {
+			outline: 5px auto rgb(94, 158, 214);
+		}
+		span, input {
+			width: $radioW;
+			height: $radioH;
+			line-height: $radioH;
+		}
+		span {
+			@extend %basic;
+			// display: -moz-inline-box;
+			// display: inline-block;
+			// *display: inline;
+			display: block;
+			zoom: 1;
+			text-align: center;
+			// background: image-url("sprite/ico_radio.png") 0 0 no-repeat;
+			// -webkit-background-size: $radioH $radioH;
+			// background-size: $radioH $radioH;
+			background-position: (0 - 0px) -26px;
+			&.checked {
+				// background: image-url("sprite/ico_radio_on.png") 0 0 no-repeat;
+				// -webkit-background-size: $radioH $radioH;
+				// background-size: $radioH $radioH;
+				background-position: (-$radioW - 0) -26px;
+			}
+		}
+		input {
+			opacity: 0;
+			filter: alpha(opacity = 0);
+			-moz-opacity: 0;
+			border: none;
+			background: none;
+			// display: -moz-inline-box;
+			// display: inline-block;
+			// *display: inline;
+			display: block;
+			zoom: 1;
+			text-align: center;
+		}
+	}
+}
+
+ // INPUT & TEXTAREA
+
+input.uniform-input, select.uniform-multiselect, textarea.uniform {
+	font-size: $base-font-size;
+	/*font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;*/
+	font-weight: normal;
+	color: #777;
+	border-top: solid 1px #aaaaaa;
+	border-left: solid 1px #aaaaaa;
+	border-bottom: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+%hover-focus {
+	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+	border-color: #999;
+}
+
+// input.uniform-input {
+// 	&.hover, &.focus {
+// 		@extend %hover-focus;
+// 	}
+// }
+
+select.uniform-multiselect {
+	&.hover, &.focus {
+		@extend %hover-focus;
+	}
+}
+
+// textarea.uniform {
+// 	&.hover, &.focus {
+// 		@extend %hover-focus;
+// 	}
+// }
+
+// PRESENTATION
+
+// Select
+
+div {
+	&.selector {
+		font-size: $base-font-size;
+		span {
+			color: #333;
+			// text-shadow: 0 1px 0 white;
+		}
+		select {
+			// font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+			font-size: $base-font-size;
+		}
+		&.disabled {
+			span, &.active span {
+				color: #bbb;
+			}
+		}
+	}
+	// &.checker {
+	// 	margin-right: 5px;
+	// }
+	// &.radio {
+	// 	vertical-align: middle;
+	// }
+}
+
+// Checker
+
+// Radio
+
+
+div.uploader {
+	*zoom: 1;
+	background: none;
+	// height: $uploadH;
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	// padding-right: 90px;
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+	span {
+		&.action {
+			// background-position: right -409px;
+			// position: absolute;
+			// top: 0;
+			// right: 0;
+			background: #111;
+			height: $uploadH;
+			line-height: $uploadH;
+			width: 100%;
+			text-align: center;
+			float: right;
+			display: inline;
+			overflow: hidden;
+			cursor: pointer;
+			box-sizing: border-box;
+		}
+		&.filename {
+			text-overflow: ellipsis;
+			display: none;
+			overflow: hidden;
+			white-space: nowrap;
+			float: left;
+			cursor: default;
+			height: $uploadH;
+			line-height: $uploadH;
+			// margin: 2px 0 2px 2px;
+			// line-height: 24px;
+			// width: 85px;
+			padding: 0 10px;
+			width: 100%;
+			background-color: #fff;
+			border: 1px #e5e5e5 solid;
+			box-sizing: border-box;
+		}
+	}
+	input {
+		opacity: 0;
+		filter: alpha(opacity = 0);
+		-moz-opacity: 0;
+		border: none;
+		background: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		float: left;
+		cursor: default;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	span {
+		&.action {
+			// text-shadow: white 0px 1px 0px;
+			background-color: #666;
+			font-size: 1rem;
+			// font-weight: bold;
+			color: #fff;
+			border: 1px #666 solid;
+			border-radius: 3px;
+		}
+		&.filename {
+			color: #777;
+			// border-right: solid 1px #bbbbbb;
+			font-size: 13px;
+		}
+	}
+}

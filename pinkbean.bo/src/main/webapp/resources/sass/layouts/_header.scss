@@ -1,0 +1,36 @@
+.header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: $header-height;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	text-align: center;
+	color: #64798d;
+	.member-area {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		margin-top: -16px;
+		.user-info {
+			display: inline-block;
+			.name {
+				font-weight: 600;
+				color: #64798d;
+				font-size: 16px;
+			}
+		}
+		.log-btn {
+			display: inline-block;
+			padding: 3px 7px;
+			margin-left: 15px;
+			border: 1px solid #64798d;
+			background: none;
+			color: #64798d;
+			cursor: pointer;
+		}
+	}
+}
