@@ -5,6 +5,7 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 
+	<!-- Root Web ApplicationContext(RooWAC) -->
 	<context-param>
 		<param-name>contextClass</param-name>
 		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
@@ -30,9 +31,11 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!-- dispatcher  -->
+	<!-- WebApplicationContext(WAC)  -->
 	<!-- 
-		applicationContext 설정 및 ViewResolver 설정을 한다.
+		- applicationContext 설정 및 ViewResolver 설정을 한다.
+		- RooWAC의 자식같은 관계라 RooWAC에서 설정한 Bean을 WAC에서 사용할 수 있다. 하지만 반대는 안된다. (마치 클래스 상속관계같음)
+		- 웹의 요청을 처리하는 부분이다. (@Controller 같은)
 	 -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>

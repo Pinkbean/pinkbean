@@ -9,11 +9,11 @@
 		<put-attribute name="menu" value="/WEB-INF/views/tiles/template/menu.jsp"/>							
 		<put-attribute name="body" value=""/>							
 		<put-attribute name="footer" value=""/>		
-	</definition>								
-									
+	</definition>																	
+						
 	<!-- hello.do를 등록함 -->									
-	<definition name="/*" extends="base-definition">														
-		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp"></put-attribute>							
-	</definition>										
-									
+	<definition name="/*/*" extends="base-definition">														
+		<put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}.jsp"></put-attribute>							
+	</definition>	
+										
 </tiles-definitions>								
