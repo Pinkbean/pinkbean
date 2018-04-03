@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <!-- 이걸 안 넣으면 글자가 깨진당 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <!-- 이걸 안 넣으면 글자가 깨진당 -->	
+
+<!-- 타일즈 쓰기 위해 필요한 것 -->		
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>	
 
 <!-- jstl -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

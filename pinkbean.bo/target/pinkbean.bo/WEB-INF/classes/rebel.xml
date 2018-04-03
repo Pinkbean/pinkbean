@@ -9,8 +9,6 @@
 	<classpath>
 		<dir name="C:/lsg/ws/pinkbean/pinkbean/pinkbean.bo/target/classes">
 		</dir>
-		<dir name="C:/lsg/ws/pinkbean/pinkbean/pinkbean.bo/target/test-classes">
-		</dir>
 	</classpath>
 
 	<web>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">    
+         
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lsg</groupId>
 	<artifactId>pinkbean</artifactId>
@@ -30,6 +31,7 @@
 		<!-- eGovFrame dependency -->
         <egovframework.rte.version>3.5.0</egovframework.rte.version>
 	</properties>
+	
 	
 	<repositories>
 	    <!-- eGovFrame -->
@@ -116,11 +118,24 @@
 		
 		<!-- framework -->
 		<!-- 페이징 기능을 위해 ui태그를 추가하려고 했더니 이게 필요하다고 한다-->
-		<!-- 이걸로 끝나지 않는다 repository를 또 추가해야 한다 -->
+		<!-- 이걸로 끝나지 않는다 repository를 또 추가해야 한다. 이 파일 내의 repository태그 참조 -->
 		<!-- 
 			전자정부 프레임워크의 라이브러리
 			다만 전자정부 프레임워크는 별도의 저장소에서 다운을 받아야하므로 repository를 등록해줘야 한다고 한다.
 		 -->
+        <dependency>
+            <groupId>egovframework.rte</groupId>
+            <artifactId>egovframework.rte.ptl.mvc</artifactId>
+            <version>${egovframework.rte.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>		 
+		 
+		<!-- 이게 ui태그 전용 라이브러리인 줄 알고 한참을 헤맸다... 이건 뭐에 쓰는거지? -->
 		<dependency>
             <groupId>egovframework.rte</groupId>
             <artifactId>egovframework.rte.fdl.cmmn</artifactId>
@@ -198,9 +213,74 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
 	</dependencies>
+	
+	
+    <!-- #################################### -->
+    <!-- Maven 프로필 -->
+    <!-- #################################### -->
+    <!-- properties의 프로필  toby 154p -->
+    <profiles>
+        <!-- local: 로컬 개발용 (기본 값) -->
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault><!-- 이것을 기본으로 동작한다. -->
+            </activation>
+            <properties>
+                <testEnvironment>local</testEnvironment><!-- 여기에 사용된 태그의 이름대로 enviroment에 등록된다. -->
+            </properties>
+        </profile>
+        <!-- 개발서버 -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <testEnvironment>dev</testEnvironment>
+            </properties>
+        </profile>
+    </profiles>
+	
+	
 	<build>
 		<finalName>pinkbean</finalName>
+	    <plugins>
+	        <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.1</version>
+	        <configuration>
+	            <source>1.7</source>
+	            <target>1.7</target>
+	        </configuration>
+	    </plugin>
+	    </plugins>
+	    <resources>
+	    	<!-- 기존 리소스. -->
+            <!-- *.properties 만 메이븐 필터링 --> <!-- 이렇게 코멘트되어 있었는데 왜 메이븐 필터링을 할까? -->
+            <!-- 그러고보니 applicationconfig에선 testproperties.properties를 찾는다. 하지만  resources, resources-local 두군데의 경로를 참고하고 각 경로에는 config 폴더가 있다.-->
+            <!-- 이 경로의 .properties를 무시해줘야 스프링이 resources-local의 properties만 읽어오는 것일까?? -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.properties</exclude>
+                </excludes>
+            </resource>	    
+            <!-- 환경별 리소스. profile로 설정된 resources들 중 어느것을 사용할지 결정되는 곳-->
+            <resource>
+                <directory>src/main/resources-${testEnvironment}</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/*.properties</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources-${testEnvironment}</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>	    
+	    </resources>
 	</build>
 </project>
