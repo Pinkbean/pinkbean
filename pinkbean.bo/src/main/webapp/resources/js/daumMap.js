@@ -13,7 +13,8 @@
 	// 해당 객체의 설정되지 않은 속성에 접근을 시도할 때마다 javaScript는 객체.prototype에 대신 존재하는 속성이 있는지 살펴본다(prototype chain이 존재한다).
 	// 위에서 this.init()을 호출하게 만들었지만, 해당 객체 내에는 init()이 존재하지 않는다. 따라서 daumMap 인스턴스는 prototype에서 아래의 init()을 찾아 호출하게 된다.
 	daumMap.prototype.init = function(){
-		this.daumMapSet();		
+		this.daumMapSet();
+		this.daumMiniMapSet();
 	}
 	
 	// daum map api
@@ -26,6 +27,16 @@
 
 		var map = new daum.maps.Map(container, options); // 지도 생성 및 객체 리턴 			
 	}
+	
+	// 다음 약도 생성
+	daumMap.prototype.daumMiniMapSet = function(){
+		new daum.roughmap.Lander({
+			"timestamp" : "1522737398489",
+			"key" : "nho8",
+			"mapWidth" : "500",
+			"mapHeight" : "200"
+		}).render();		
+	};
 	
 	$(function(){
 		daumMap = new daumMap(); //cl.daumMap 인스턴스 생성		
