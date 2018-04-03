@@ -3,4 +3,5 @@
 	메뉴! </br>
 	<a href="/main">메인</a></br>
 	<a href="/properties">프로퍼티</a></br>
+	<a href="/daummap">다음지도</a></br>
 </div>

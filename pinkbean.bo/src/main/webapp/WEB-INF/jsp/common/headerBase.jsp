@@ -13,5 +13,13 @@
 
 
 <!-- headerStart -->
+
 <!-- headerCSS -->
+
 <!-- headerJS -->
+<script type="text/javascript" src="/resources/js/lib/jquery-3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery-3.2.0/jquery.js"></script>
+
+<!-- eval -->
+<%-- Daum API appKey --%>
+<%-- <spring:eval var="appKey" expression="@environment['pinkbean.kakao.javaScriptKey']" /> --%>
