@@ -23,7 +23,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(
-	    basePackages = "com.lsg.pinkbean"
+	    basePackages = "com.lsg.pinkbean.bo"
 	    , useDefaultFilters = false
 	    , includeFilters = {
 	        @ComponentScan.Filter(value = Controller.class, type = FilterType.ANNOTATION)

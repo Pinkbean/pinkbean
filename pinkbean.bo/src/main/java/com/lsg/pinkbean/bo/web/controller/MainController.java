@@ -6,12 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lsg.pinkbean.core.module.common.service.EmailService;
+
 @Controller
 public class MainController {
 	
 	// properties test
 	@Autowired
 	private Environment env;
+	
+	// email test
+	@Autowired
+	private EmailService emailService;
 
 	/**
 	 * 메인
@@ -55,6 +61,35 @@ public class MainController {
 
 		mv.addObject("appKey",appKey);
 		mv.setViewName("/testMenu/daumMapTest");
+		return mv;
+	}
+	
+	/**
+	 * 전자메일
+	 * @return
+	 */
+	@RequestMapping(value="mail")
+	public ModelAndView mailTest() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("/testMenu/mailTest");
+		return mv;
+	}
+	
+	/**
+	 * 메일 전송
+	 * @return
+	 */
+	@RequestMapping(value="mail/sendMail")
+	public ModelAndView sendMailTest() {
+		ModelAndView mv = new ModelAndView();
+		
+		try {
+			//emailService.sendMail("메일타입~", "leewisdom@zen9.co.kr", null);
+		}catch(Exception e) {
+			// 여기서 받아 처리할 수 있지 않을까?
+		}
+
 		return mv;
 	}
 	

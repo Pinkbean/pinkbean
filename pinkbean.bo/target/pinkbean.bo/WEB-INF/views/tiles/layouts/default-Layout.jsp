@@ -1,7 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>					
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>	<!-- 타일즈 쓰기 위해 필요한 것 -->		 		
+<%@ include file="/WEB-INF/jsp/common/headerBase.jsp" %> 		
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko" xml:lang="ko">

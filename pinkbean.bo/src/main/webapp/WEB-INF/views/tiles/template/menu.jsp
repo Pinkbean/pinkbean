@@ -4,4 +4,5 @@
 	<a href="/main">메인</a></br>
 	<a href="/properties">프로퍼티</a></br>
 	<a href="/daummap">다음지도</a></br>
+	<a href="/mail">메일</a></br>
 </div>
