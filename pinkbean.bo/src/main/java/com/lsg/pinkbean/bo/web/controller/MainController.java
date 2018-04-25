@@ -1,6 +1,5 @@
 package com.lsg.pinkbean.bo.web.controller;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,6 +126,17 @@ public class MainController {
 
 		mv.addObject("contents",contents);
 		mv.setViewName("/testMenu/popup/pop");
+		return mv;
+	}	
+	
+	/**
+	 * 파일 다운로드 테스트
+	 * @return
+	 */
+	@RequestMapping(value="file/download")
+	public ModelAndView fileDownTest(@ModelAttribute("contents") String contents) {
+		ModelAndView mv = new ModelAndView();
+		
 		return mv;
 	}	
 	

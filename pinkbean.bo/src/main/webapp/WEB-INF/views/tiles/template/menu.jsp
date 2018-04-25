@@ -6,4 +6,6 @@
 	<a href="/daummap">다음지도</a><br>
 	<a href="/mail">메일</a><br>
 	<a href="/popup">팝업</a><br>
+	
+	인터셉트텍스트: ${testIntercepter}
 </div>

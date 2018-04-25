@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import com.lsg.pinkbean.bo.resolvers.JsonViewResolver;
+import com.lsg.pinkbean.bo.web.menu.Interceptor.MenuInterceptor;
 
 @EnableWebMvc
 @Configuration
@@ -36,6 +38,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
+    
+    // Interceptor registry
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+    	registry.addInterceptor(this.menuInterceptor());
     }
     
     // ViewResolver
@@ -80,5 +88,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     	return tilesConfigurer;
     }
     
-    
+    // Interceptor
+    @Bean
+    public MenuInterceptor menuInterceptor() {
+    	return new MenuInterceptor();
+    }
 }
