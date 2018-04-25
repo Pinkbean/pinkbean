@@ -1,12 +1,19 @@
 package com.lsg.pinkbean.bo.web.controller;
 
+import javax.mail.Session;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.lsg.pinkbean.core.module.common.service.EmailService;
+import com.lsg.pinkbean.core.utils.EmailSenderUtils;
+
+//import com.lsg.pinkbean.core.module.common.service.EmailService;
 
 @Controller
 public class MainController {
@@ -17,7 +24,7 @@ public class MainController {
 	
 	// email test
 	@Autowired
-	private EmailService emailService;
+	private EmailSenderUtils emailsenderUtils;
 
 	/**
 	 * 메인
@@ -72,6 +79,8 @@ public class MainController {
 	public ModelAndView mailTest() {
 		ModelAndView mv = new ModelAndView();
 
+		
+		
 		mv.setViewName("/testMenu/mailTest");
 		return mv;
 	}
@@ -80,18 +89,46 @@ public class MainController {
 	 * 메일 전송
 	 * @return
 	 */
-	@RequestMapping(value="mail/sendMail")
-	public ModelAndView sendMailTest() {
+	@RequestMapping(value="mail/sendMail", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ModelAndView sendMailTest(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		
+		 System.out.println("session : " + session.toString());
+		
 		try {
-			//emailService.sendMail("메일타입~", "leewisdom@zen9.co.kr", null);
+			//emailsenderUtils.sendMail("leewisdom@zen9.co.kr", "제목", "내용");
 		}catch(Exception e) {
 			// 여기서 받아 처리할 수 있지 않을까?
 		}
 
+		mv.addObject("hello","hello");
 		return mv;
 	}
+	
+	/**
+	 * 팝업 테스트
+	 * @return
+	 */
+	@RequestMapping(value="popup")
+	public ModelAndView popupTest() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("/testMenu/popupTest");
+		return mv;
+	}	
+	
+	/**
+	 * 팝업 테스트(자식 띄우기)
+	 * @return
+	 */
+	@RequestMapping(value="popup/pop")
+	public ModelAndView popupTestChildren(@ModelAttribute("contents") String contents) {
+		ModelAndView mv = new ModelAndView();
+
+		mv.addObject("contents",contents);
+		mv.setViewName("/testMenu/popup/pop");
+		return mv;
+	}	
 	
 	@RequestMapping(value="/index")
 	public String main2() {

@@ -30,6 +30,9 @@
 		<logback-ext-spring.version>0.1.2</logback-ext-spring.version>
 		<!-- eGovFrame dependency -->
         <egovframework.rte.version>3.5.0</egovframework.rte.version>
+        <!-- jackson -->
+        <com.fasterxml.jackson.core.version>2.6.0</com.fasterxml.jackson.core.version>
+        <com.fasterxml.jackson.dataformat.version>2.6.3</com.fasterxml.jackson.dataformat.version>        
 	</properties>
 	
 	
@@ -201,20 +204,43 @@
 			<version>${jstl.version}</version>
 		</dependency>
 		
-		<!-- test -->
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>commons-logging</artifactId>
-					<groupId>commons-logging</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	</dependencies>
-	
+	    <!-- Email -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+		<!-- 이걸 추가한 이후로 ajax json 타입으로 주고받는게 이상 없어졌다! 원래 ajax로 받을때 오류가 떴었다 -->
+		<!-- json resolver도 추가하긴 했다 -->
+        <!-- JSON (Jackson): https://github.com/FasterXML/jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${com.fasterxml.jackson.core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${com.fasterxml.jackson.core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${com.fasterxml.jackson.core.version}</version>
+        </dependency>
+
+        <!-- XML (Jackson): https://github.com/FasterXML/jackson-dataformat-xml -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${com.fasterxml.jackson.dataformat.version}</version>
+        </dependency>	
+		
+
+		</dependencies>	
 	
     <!-- #################################### -->
     <!-- Maven 프로필 -->

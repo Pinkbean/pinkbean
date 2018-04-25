@@ -1,5 +1,3 @@
-com\lsg\pinkbean\base\util\EmailSenderUtilsImpl.class
-com\lsg\pinkbean\base\module\common\service\EmailServiceImpl.class
-com\lsg\pinkbean\base\util\EmailSenderUtils.class
-com\lsg\pinkbean\base\module\common\service\EmailService.class
-com\lsg\pinkbean\base\util\EmailSenderUtilsImpl$1.class
+com\lsg\pinkbean\core\utils\EmailSenderUtils.class
+com\lsg\pinkbean\core\utils\EmailSenderUtilsImpl$1.class
+com\lsg\pinkbean\core\utils\EmailSenderUtilsImpl.class

@@ -20,6 +20,8 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
+import com.lsg.pinkbean.bo.resolvers.JsonViewResolver;
+
 @EnableWebMvc
 @Configuration
 @ComponentScan(
@@ -50,6 +52,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         TilesViewResolver tilesViewResolver = new TilesViewResolver();
         tilesViewResolver.setViewClass(TilesView.class);
         tilesViewResolver.setOrder(1); // 제일 먼저 받아야하니까 order을 1로 주어야 한다.
+        
+        // jsonViewResolver
+        JsonViewResolver jsonViewResolver = new JsonViewResolver();
 
         // Content Negotiating ViewResolver
         ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
@@ -59,6 +64,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         List<ViewResolver> resolvers = new ArrayList<ViewResolver>();
         resolvers.add(jspViewResolver);
         resolvers.add(tilesViewResolver);
+        resolvers.add(jsonViewResolver);
         
         resolver.setViewResolvers(resolvers);
         return resolver;

@@ -1,4 +1,2 @@
-C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\base\util\EmailSenderUtilsImpl.java
-C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\base\util\EmailSenderUtils.java
-C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\base\module\common\service\EmailService.java
-C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\base\module\common\service\EmailServiceImpl.java
+C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\core\utils\EmailSenderUtils.java
+C:\lsg\ws\pinkbean\pinkbean\pinkbean.core\src\main\java\com\lsg\pinkbean\core\utils\EmailSenderUtilsImpl.java

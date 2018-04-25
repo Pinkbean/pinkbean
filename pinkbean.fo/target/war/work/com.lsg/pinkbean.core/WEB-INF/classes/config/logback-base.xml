@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<included>
-
-    <property name="ROOT_LEVEL" value="INFO"/>
-    <property name="APP_LEVEL" value="DEBUG"/>
-
-    <include resource="config/logback-root.xml"/>
-
-</included>

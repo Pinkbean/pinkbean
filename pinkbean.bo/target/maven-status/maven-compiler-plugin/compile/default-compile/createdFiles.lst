@@ -1,3 +1,4 @@
 com\lsg\pinkbean\bo\config\ApplicationConfig.class
 com\lsg\pinkbean\bo\config\WebMvcConfig.class
 com\lsg\pinkbean\bo\web\controller\MainController.class
+com\lsg\pinkbean\core\resolvers\JsonViewResolver.class
